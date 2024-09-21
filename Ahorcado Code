@@ -5,15 +5,15 @@ public class huevo {
 	public static void main(String[] args) {
         Scanner lector = new Scanner(System.in);
 
-        // Variables
+        //variables
         int cont = 0;
         boolean resuelto = true;
         int vidas = 6;
         String palabra;
-        String letraIngresada;
-        boolean letraCorrecta;
+        String letraing;
+        boolean letra_correcta;
 
-        //pede palabra a adivinar
+        //palabra a adivinar
         System.out.println("Ingrese la palabra que se deberá de adivinar más tarde:");
         palabra = lector.nextLine().toLowerCase(); //convierte a minusculas
         int cantletra = palabra.length();
@@ -26,7 +26,7 @@ public class huevo {
         }
 
         while (vidas > 0) {
-            letraCorrecta = false;
+            letra_correcta = false;
             
             for (int i = 0; i < 100 && cont == 0; i++) {
             	System.out.println("");
@@ -39,25 +39,25 @@ public class huevo {
             System.out.println();
             
             System.out.println("Ingresa una letra o la palabra completa:");
-            letraIngresada = lector.nextLine().toLowerCase(); //convierte a minusculas
+            letraing = lector.nextLine().toLowerCase(); //convierte a minusculas
 
-            if (letraIngresada.equals(palabra)) {
+            if (letraing.equals(palabra)) {
                 System.out.println("¡Ganaste! La palabra era: " + palabra);
                 break;
             }
 
             
-            if (letraIngresada.length() == 1) {
-                char letra = letraIngresada.charAt(0);
+            if (letraing.length() == 1) {
+                char letra = letraing.charAt(0);
 
                 for (int i = 0; i < cantletra; i++) {
                     if (palabra_s[i] == letra) {
                         progreso[i] = letra;
-                        letraCorrecta = true;
+                        letra_correcta = true;
                     }
                 }
 
-                if (!letraCorrecta) {
+                if (!letra_correcta) {
                     vidas--;
                     System.out.println("Letra incorrecta, tienes " + vidas + " vidas.");
                 }
@@ -72,7 +72,7 @@ public class huevo {
                 }
                 //gana si adivina la palabra
                 if (resuelto) { //antes estaba puesto como: if (resuelto = true) pero por un error fue consultado a char got
-                    System.out.println("¡Ganaste! la palabra era: " + palabra);
+                    System.out.println("Ganaste, la palabra era: " + palabra);
                     break;
                 }
 
