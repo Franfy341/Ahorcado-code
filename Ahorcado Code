@@ -1,6 +1,6 @@
-package joda;
+package programacion;
 import java.util.*;
-public class huevo {
+public class ahorcado {
 	
 	public static void main(String[] args) {
         Scanner lector = new Scanner(System.in);
