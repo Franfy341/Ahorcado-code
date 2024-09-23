@@ -19,10 +19,10 @@ public class ahorcado {
         int cantletra = palabra.length();
 
         char[] palabra_s = palabra.toCharArray();
-        char[] progres = new char[cantletra];
+        char[] progreso = new char[cantletra];
 
         for (int i = 0; i < cantletra; i++) {
-            progres[i] = '_';
+            progreso[i] = '_';
         }
 
         while (vidas > 0) {
@@ -34,7 +34,7 @@ public class ahorcado {
             cont ++;
             System.out.print("Palabra a adivinar: ");
             for (int i = 0; i < cantletra; i++) {
-                System.out.print(progres[i] + " ");
+                System.out.print(progreso[i] + " ");
             }
             System.out.println();
             
@@ -42,7 +42,7 @@ public class ahorcado {
             letraing = lector.nextLine().toLowerCase(); //convierte a minusculas
 
             if (letraing.equals(palabra)) {
-                System.out.println("¡Ganaste! La palabra era: " + palabra);
+                System.out.println("Ganaste, la palabra era: " + palabra);
                 break;
             }
 
@@ -52,7 +52,7 @@ public class ahorcado {
 
                 for (int i = 0; i < cantletra; i++) {
                     if (palabra_s[i] == letra) {
-                        progres[i] = letra;
+                        progreso[i] = letra;
                         letra_correcta = true;
                     }
                 }
@@ -65,7 +65,7 @@ public class ahorcado {
                 //verificar si el jugador ha adivinado todas las letras
                 
                 for (int i = 0; i < cantletra; i++) {
-                    if (progres[i] == '_') {
+                    if (progreso[i] == '_') {
                         resuelto = false;
                         break;
                     }
